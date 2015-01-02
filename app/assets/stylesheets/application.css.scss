@@ -1,0 +1,186 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+//Font Aweasome
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+
+
+$base-color: #990000;
+$light-color: lighten($base-color, 10%);
+$dark-color: darken($base-color, 10%);
+$black: #1A1A1A;
+$off-white: #f6f9fa;
+$grey: #999999;
+
+
+.nav-img {
+	height: 50px;
+	width: auto;
+	padding: 5px;
+}
+
+.navbar-brand {
+	margin: 0;
+	padding: 0;
+}
+
+/*carousel*/
+
+.slide1, .slide2, .slide3, .slide4, .slide5, .slide6, .slide7 {
+  height: 100vh;
+  background-size: cover;
+  background-position: center center;
+}
+
+/* HACK for vh on iOS ################################ https://gist.github.com/pburtchaell/e702f441ba9b3f76f587*/
+/**
+ * iPad with portrait orientation.
+ */
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
+  .slide1, .slide2, .slide3, .slide4, .slide5, .slide6, .slide7 {
+    height: 1024px;
+  }
+}
+
+/**
+ * iPad with landscape orientation.
+ */
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
+  .slide1, .slide2, .slide3, .slide4, .slide5, .slide6, .slide7 {
+    height: 768px;
+  }
+}
+
+/**
+ * iPhone 5
+ * You can also target devices with aspect ratio.
+ */
+@media screen and (device-aspect-ratio: 40 / 71) {
+  .slide1, .slide2, .slide3, .slide4, .slide5, .slide6, .slide7 {
+    height: 500px;
+  }
+}
+
+/*end hack */
+
+.slide1 {
+  background-image: url(../Pictures/Carosel/getIced.jpg);
+}
+
+.slide2 {
+  background-image: url(../Pictures/Carosel/awayTemp.JPG);
+}
+
+.slide3 {
+  background-image: url(../Pictures/Carosel/americanGothic.JPG);
+}
+
+.slide4 {
+  background-image: url(../Pictures/Carosel/Civ.JPG);
+}
+
+.slide5 {
+  background-image: url(../Pictures/Carosel/fredPotato.JPG);
+}
+
+.slide6 {
+  background-image: url(../Pictures/Carosel/undesirables.jpg);
+}
+
+.slide7 {
+  background-image: url(../Pictures/Carosel/DanceParty.gif);
+}
+
+/* Carousel Fade Effect */
+
+.carousel.carousel-fade {
+  .item {
+    -webkit-transition: opacity 1s linear;
+    -moz-transition: opacity 1s linear;
+    -ms-transition: opacity 1s linear;
+    -o-transition: opacity 1s linear;
+    transition: opacity 1s linear;
+    opacity: .5;
+  }
+  .active {
+    &.item {
+      opacity: 1;
+    }
+    &.left, &.right {
+      left: 0;
+      z-index: 2;
+      opacity: 0;
+      filter: alpha(opacity = 0);
+    }
+  }
+}
+
+.carousel-overlay {
+  background-color: rgba(255, 255, 255, 0.6);
+  position: absolute;
+  bottom: 0%;
+  right: 0;
+  left: 0;
+  h1 {
+    color: $base-color;
+    font-size: 40px;
+  }
+  h3 {
+    font-weight: 600;
+    font-size: 25px;
+  }
+}
+
+@media (min-width: 768px) {
+  .carousel-overlay {
+    background-color: rgba(255, 255, 255, 0.6);
+    position: absolute;
+    bottom: 12%;
+    right: 0;
+    left: 0;
+    h1 {
+      color: $base-color;
+      font-size: 70px;
+    }
+    h3 {
+      font-weight: 600;
+      font-size: 50px;
+    }
+  }
+}
+
+.fa-color {
+  color: $base-color;
+  &:hover {
+    color: $dark-color;
+  }
+}
+
+
+
+
+
+
+.icons {
+	height: 140px;
+	width: auto;
+}

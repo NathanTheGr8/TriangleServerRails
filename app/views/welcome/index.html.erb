@@ -1,0 +1,92 @@
+
+<!--begin bg-carousel-->
+    <div id="bg-fade-carousel" class="carousel slide carousel-fade" data-ride="carousel">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <%= image_tag("Carosel/1.jpg") %>
+            </div>
+            <div class="item">
+                <%= image_tag("Carosel/2.jpg") %>
+            </div>
+            <div class="item">
+                <%= image_tag("Carosel/3.jpg") %>
+            </div>
+            <div class="item">
+                <%= image_tag("Carosel/4.jpg") %>
+            </div>
+            <div class="item">
+                <%= image_tag("Carosel/5.jpg") %>
+            </div>
+            <div class="item">
+                <%= image_tag("Carosel/6.jpg") %>
+            </div>
+            <div class="item">
+                <%= image_tag("Carosel/7.gif") %>
+            </div>
+        </div><!-- .carousel-inner -->
+        <div class="container carousel-overlay text-center">
+            <h1>Welcome To The Server</h1>
+            <h3 class="lead">Explore and Enjoy!</h3>
+            <a class="page-scroll" href="#links"><span class="fa fa-chevron-down fa-5x fa-color"></span></a>
+        </div>
+    </div><!-- .carousel -->
+    <!--end bg-carousel-->
+
+
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing" id="links">
+
+      <!-- Three columns of text below the carousel -->
+      <div class="row centered">
+        <div class="col-sm-6 col-md-4 col-lg-4">
+          <a href="share/"><i class="fa fa-archive fa-5x"></i></a>
+          <h2>File Server</h2>
+          <p>Browser the Server Files in your browser.</p>
+          <p><a class="btn btn-danger" href="share/" role="button">Go to App &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+
+        <div class="col-sm-6 col-md-4 col-lg-4">
+          <a href="http://10.1.10.103/photo/"><i class="fa fa-photo fa-5x"></i></a>
+          <h2>Photo Album</h2>
+          <p>It's just a photo album.</p>
+          <p><a class="btn btn-danger" href="http://10.1.10.103/photo/" role="button">Go to App &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+
+          <div class="col-sm-6 col-md-4 col-lg-4">
+              <a href="support/"><i class="fa fa-ticket fa-5x"></i></a>
+              <h2>Ticketing System</h2>
+              <p>A ticketing system for when shit breaks. It isn't done yet.</p>
+              <p><a class="btn btn-danger" href="support/" role="button">Go to App &raquo;</a></p>
+          </div><!-- /.col-lg-4 -->
+
+        <div class="col-sm-6 col-md-4 col-lg-4">
+          <a href="http://10.1.10.5:5050"><%= image_tag("icons/couch_potato_square.png", class: "icons") %></a>
+          <h2>Couch Potato</h2>
+          <p>Download movies automatically, easily and in the best quality as soon as they are available.</p>
+          <p><a class="btn btn-danger" href="http://10.1.10.5:5050" role="button">Go to App &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+
+        <div class="col-sm-6 col-md-4 col-lg-4">
+
+          <a href="http://10.1.10.5:8081"><%= image_tag("icons/sickbeard_logo.png", class: "icons")%></a>
+            <br></br>
+          <h2>Sick Beard</h2>
+          <p>Sick Beard is a PVR for newsgroup users (with limited torrent support). It watches for new episodes of your favorite shows and when they are posted it downloads them, sorts and renames them, and optionally generates metadata for them.</p>
+          <p><a class="btn btn-danger" href="http://10.1.10.5:8081" role="button">Go to App &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+
+
+        <div class="col-sm-6 col-md-4 col-lg-4">
+            <br></br>
+          <a href="http://10.1.10.5:32400/web/index.html"><%= image_tag("icons/plex-logo-big.png", class: "icons") %></a>
+            <br></br>
+          <h2>Plex</h2>
+          <p>Place to access all of the media on the server.</p>
+          <p><a class="btn btn-danger" href="http://10.1.10.5:32400/web/index.html" role="button">Go to App &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+
+      </div><!--row-->
