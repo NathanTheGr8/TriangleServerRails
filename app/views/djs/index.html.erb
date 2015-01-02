@@ -1,0 +1,43 @@
+<div class="page-header">
+  <%= link_to new_dj_path, :class => 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    New Dj
+  <% end %>
+  <h1>Listing djs</h1>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+            <th>Saturday</th>
+            <th>Sunday</th>
+            
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, @djs) do |dj| %>
+            <td><%= dj.name %></td>
+            <td><%= dj.location %></td>
+            <td><%= dj.monday %></td>
+            <td><%= dj.tuesday %></td>
+            <td><%= dj.wednesday %></td>
+            <td><%= dj.thursday %></td>
+            <td><%= dj.friday %></td>
+            <td><%= dj.saturday %></td>
+            <td><%= dj.sunday %></td>
+            <td><%= link_to 'Show', dj %></td>
+        <td><%= link_to 'Edit', edit_dj_path(dj) %></td>
+        <td><%= link_to 'Destroy', dj, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>

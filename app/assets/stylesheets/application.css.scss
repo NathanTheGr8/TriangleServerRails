@@ -32,6 +32,11 @@ $off-white: #f6f9fa;
 $grey: #999999;
 
 
+body {
+	padding: 60px 0px 0px 0px; 
+	margin: 0px;
+}
+
 .nav-img {
 	height: 50px;
 	width: auto;
@@ -45,8 +50,9 @@ $grey: #999999;
 
 /*carousel*/
 
+
 .slide1, .slide2, .slide3, .slide4, .slide5, .slide6, .slide7 {
-  height: 100vh;
+  height: calc(100vh - 60px);
   background-size: cover;
   background-position: center center;
 }
@@ -83,31 +89,31 @@ $grey: #999999;
 /*end hack */
 
 .slide1 {
-  background-image: url(../Pictures/Carosel/getIced.jpg);
+  background-image: image-url("Carousel/1.jpg");
 }
 
 .slide2 {
-  background-image: url(../Pictures/Carosel/awayTemp.JPG);
+  background-image: image-url("Carousel/2.jpg");
 }
 
 .slide3 {
-  background-image: url(../Pictures/Carosel/americanGothic.JPG);
+  background-image: image-url("Carousel/3.jpg");
 }
 
 .slide4 {
-  background-image: url(../Pictures/Carosel/Civ.JPG);
+  background-image: image-url("Carousel/4.jpg");
 }
 
 .slide5 {
-  background-image: url(../Pictures/Carosel/fredPotato.JPG);
+  background-image: image-url("Carousel/5.jpg");
 }
 
 .slide6 {
-  background-image: url(../Pictures/Carosel/undesirables.jpg);
+  background-image: image-url("Carousel/6.jpg");
 }
 
 .slide7 {
-  background-image: url(../Pictures/Carosel/DanceParty.gif);
+  background-image: image-url("Carousel/7.gif");
 }
 
 /* Carousel Fade Effect */

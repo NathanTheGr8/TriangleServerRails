@@ -1,0 +1,41 @@
+<div class="page-header">
+  <%= link_to djs_path, :class => 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_dj_path(@dj), :class => 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Show dj</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Name:</dt>
+  <dd><%= @dj.name %></dd>
+
+  <dt>Location:</dt>
+  <dd><%= @dj.location %></dd>
+
+  <dt>Monday:</dt>
+  <dd><%= @dj.monday %></dd>
+
+  <dt>Tuesday:</dt>
+  <dd><%= @dj.tuesday %></dd>
+
+  <dt>Wednesday:</dt>
+  <dd><%= @dj.wednesday %></dd>
+
+  <dt>Thursday:</dt>
+  <dd><%= @dj.thursday %></dd>
+
+  <dt>Friday:</dt>
+  <dd><%= @dj.friday %></dd>
+
+  <dt>Saturday:</dt>
+  <dd><%= @dj.saturday %></dd>
+
+  <dt>Sunday:</dt>
+  <dd><%= @dj.sunday %></dd>
+
+</dl>

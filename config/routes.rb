@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :users
-  
+  resources :djs
+
+  resources :djs do
+    collection { post :import }
+  end
+
+  devise_for :users, controllers: { sessions: "users/sessions" }
+  #get '/users/:id', :to => 'users#show', :as => :user
 
   root to: "welcome#index"
    
