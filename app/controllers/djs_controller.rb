@@ -3,6 +3,11 @@ class DjsController < ApplicationController
 
   respond_to :html
 
+  def import
+    Dj.import(params[:file])
+    redirect_to djs_path, notice: "DJs imported."
+  end
+
   def index
     @djs = Dj.all
     respond_with(@djs)

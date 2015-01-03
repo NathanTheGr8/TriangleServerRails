@@ -19,6 +19,10 @@ gem 'devise'
 gem "pundit"
 
 
+#spread sheet parsing
+gem 'roo'
+
+
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
