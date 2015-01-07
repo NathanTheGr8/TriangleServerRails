@@ -18,7 +18,10 @@ class DjsController < ApplicationController
 
   def index
     @djs = Dj.all
-    respond_with(@djs)
+    respond_to do |format|
+      format.html
+      format.csv { send_data @djs.to_csv }
+    end
   end
 
   def show

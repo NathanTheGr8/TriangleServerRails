@@ -3,12 +3,21 @@ require 'csv'
 
 class Dj < ActiveRecord::Base
 	def self.import(file)
-	  CSV.foreach(file.path, headers: true) do |row|
-	    Dj.create! row.to_hash
-	    #document = find_by_id(row["id"]) || new
-	    #document.attributes = row.to_hash.slice(*accessible_attributes)
-	    #document.save!
-	  end
+		CSV.foreach(file.path, headers: true) do |row|
+		    Dj.create! row.to_hash
+		    #document = find_by_id(row["id"]) || new
+		    #document.attributes = row.to_hash.slice(*accessible_attributes)
+		    #document.save!
+		end
+	end
+
+	def self.to_csv
+	    CSV.generate do |csv|
+	        csv << column_names
+	        all.each do |dj|
+	        	csv << dj.attributes.values_at(*column_names)
+	      	end
+	    end
 	end
 
 

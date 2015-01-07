@@ -1,7 +1,11 @@
 <div class="page-header">
-  <%= link_to new_dj_path, :class => 'btn btn-primary' do %>
+  <%= link_to new_dj_path, :class => 'btn btn-primary'  do %>
     <span class="glyphicon glyphicon-plus"></span>
     New Dj
+  <% end %>
+  <%= link_to djs_path(:format => :csv), :class => 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-download"></span>
+    Download
   <% end %>
   <h1>Listing djs</h1>
 </div>
@@ -13,13 +17,13 @@
             <th>Name</th>
             <th>ID</th>
             <th>Location</th>
-            <th>Monday</th>
-            <th>Tuesday</th>
-            <th>Wednesday</th>
-            <th>Thursday</th>
-            <th>Friday</th>
-            <th>Saturday</th>
-            <th>Sunday</th>
+            <th>Mon</th>
+            <th>Tues</th>
+            <th>Wed</th>
+            <th>Thurs</th>
+            <th>Fri</th>
+            <th>Sat</th>
+            <th>Sun</th>
             
       </tr>
     </thead>
