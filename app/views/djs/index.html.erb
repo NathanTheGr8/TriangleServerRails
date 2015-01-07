@@ -11,6 +11,7 @@
     <thead>
       <tr>
             <th>Name</th>
+            <th>ID</th>
             <th>Location</th>
             <th>Monday</th>
             <th>Tuesday</th>
@@ -25,16 +26,17 @@
 
     <tbody>
       <%= content_tag_for(:tr, @djs) do |dj| %>
-            <td><%= dj.name %></td>
-            <td><%= dj.location %></td>
-            <td><%= dj.monday %></td>
-            <td><%= dj.tuesday %></td>
-            <td><%= dj.wednesday %></td>
-            <td><%= dj.thursday %></td>
-            <td><%= dj.friday %></td>
-            <td><%= dj.saturday %></td>
-            <td><%= dj.sunday %></td>
-            <td><%= link_to 'Show', dj %></td>
+        <td><%= dj.name %></td>
+        <td><%= dj.id %></td>
+        <td><%= dj.location %></td>
+        <td><%= dj.monday %></td>
+        <td><%= dj.tuesday %></td>
+        <td><%= dj.wednesday %></td>
+        <td><%= dj.thursday %></td>
+        <td><%= dj.friday %></td>
+        <td><%= dj.saturday %></td>
+        <td><%= dj.sunday %></td>
+        <td><%= link_to 'Show', dj %></td>
         <td><%= link_to 'Edit', edit_dj_path(dj) %></td>
         <td><%= link_to 'Destroy', dj, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       <% end %>
@@ -42,8 +44,49 @@
   </table>
 </div>
 
-<h2>Import DJss</h2>
+<h2>Randomize Assign DJs</h2>
+<%= form_tag make_djs_path, method: :post do %>
+  <%= submit_tag 'Make DJs', class: "btn btn-primary" %>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>ID</th>
+      <th>Location</th>
+      <th>Monday</th>
+      <th>Tuesday</th>
+      <th>Wednesday</th>
+      <th>Thursday</th>
+      <th>Friday</th>
+      <th>Saturday</th>
+      <th>Sunday</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @djs.each do |dj| %>
+      <tr>
+        <td><%= dj.name %></td>
+        <td><%= dj.id %></td>
+        <td><%= dj.location %></td>
+        <td><%= dj.monday %></td>
+        <td><%= dj.tuesday %></td>
+        <td><%= dj.wednesday %></td>
+        <td><%= dj.thursday %></td>
+        <td><%= dj.friday %></td>
+        <td><%= dj.saturday %></td>
+        <td><%= dj.sunday %></td>
+        <td><%= link_to 'Show', dj %></td>
+        <td><%= link_to 'Edit', edit_dj_path(dj) %></td>
+        <td><%= link_to 'Destroy', dj, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+
+<h2>Import DJ's</h2>
 <%= form_tag import_djs_path, multipart: true do %>
   <%= file_field_tag :file %>
-  <%= submit_tag "Import"%>
+  <%= submit_tag "Import", class: "btn btn-primary"%>
 <% end %>

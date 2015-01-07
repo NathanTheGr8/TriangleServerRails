@@ -3,9 +3,12 @@ Rails.application.routes.draw do
 
   resources :djs do
     collection { post :import }
+    collection { post :make }
   end
 
+  resources :users, only: [:show]
   devise_for :users, controllers: { sessions: "users/sessions" }
+  
   #get '/users/:id', :to => 'users#show', :as => :user
 
   root to: "welcome#index"
