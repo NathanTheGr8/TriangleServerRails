@@ -7,6 +7,7 @@ class DjsController < ApplicationController
   #“KAJ”, “AMW”, “JMB”, “AWW”, “DCG”, “JPM”, “MDH”, “MDP”, “BBZ”, “CPU”, “GWP”, “JSS”, “IJL”, “KAM”, “LLL”, “DPM”, “TLC”, “JRS”, “AMN”, “GMV”, “MJV”, “NHD”, “NGP”, “DML”, “ELL”, “NRD”, “MNB”, “KIL”, “MGN”, “APP”, “HHH”, “SMB”, “GPS”, “ABB”, “MSH”, “HTJ”, “HCS”, “APE”, “DUH”, “JMR”, “DMF”, “CJV”, “KJS”, “ADS”, “MCS”, “RSZ”, “JFK”, “WDM”, “SEH”, “TRV”, “A$S”, “MJE”, “CES”, “MCS”, “AVP”, “HLM”, “JBW”
 
   def make
+    #@bros = User.all
     Dj.make()
     redirect_to djs_path, notice: "DJs made for Week"
   end
