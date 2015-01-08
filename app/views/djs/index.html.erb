@@ -11,7 +11,21 @@
     <span class="glyphicon glyphicon-random"></span>
     Make DJs
   <% end %>
-  <h1>DJs for Week of <%= Time.now.strftime"%b %d, %Y" %></h1>
+
+
+
+  <% month = Time.now.strftime"%b "%>
+  <% wday = Time.now.wday %>
+  <% dayOfMonth = Time.now.day %>
+  <% day = dayOfMonth-wday+1 %>
+  <% if day < 1 %>
+    <h1>DJs for Week of <%= Time.now.strftime"%b ".to_s %></h1>
+  <% else %>
+    <h1>DJs for Week of <%= Time.now.strftime"%b ".to_s+day.to_s %></h1>
+  <% end %>
+
+  
+
 </div>
 
 <div class="table-responsive">
