@@ -30,27 +30,45 @@ class Dj < ActiveRecord::Base
 	    week = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
 	    @dj.each do |dj|
 	    	if dj.monday != nil
-              	dj.monday = intials.delete_at(rand(intials.size))
+	    		if dj.monday.length > 0
+              		dj.monday = intials.delete_at(rand(intials.size))
+              	end
           	end
 
           	if dj.tuesday != nil
-              	dj.tuesday = intials.delete_at(rand(intials.size))
+          		if dj.tuesday.length > 0
+              		dj.tuesday = intials.delete_at(rand(intials.size))
+              	end
           	end
 
           	if dj.wednesday != nil
-              	dj.wednesday = intials.delete_at(rand(intials.size))
+          		if dj.wednesday.length > 0
+              		dj.wednesday = intials.delete_at(rand(intials.size))
+              	end
           	end
 
           	if dj.thursday != nil
-              	dj.thursday = intials.delete_at(rand(intials.size))
+          		if dj.thursday.length > 0
+              		dj.thursday = intials.delete_at(rand(intials.size))
+              	end
           	end
 
           	if dj.friday != nil
-              	dj.friday = intials.delete_at(rand(intials.size))
+          		if dj.friday.length > 0
+              		dj.friday = intials.delete_at(rand(intials.size))
+              	end
           	end
 
           	if dj.saturday != nil
-              	dj.saturday = intials.delete_at(rand(intials.size))
+          		if dj.saturday.length > 0
+              		dj.saturday = intials.delete_at(rand(intials.size))
+              	end
+          	end
+
+          	if dj.sunday != nil
+          		if dj.sunday.length > 0
+              		dj.sunday = intials.delete_at(rand(intials.size))
+              	end
           	end
 
         	dj.save!
