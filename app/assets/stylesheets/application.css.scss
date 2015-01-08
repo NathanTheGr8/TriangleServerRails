@@ -37,6 +37,13 @@ body {
 	margin: 0px;
 }
 
+.center-div {
+  padding: 0px;
+  margin-left: auto; 
+  margin-right: auto;
+  width: 100%;
+}
+
 .nav-img {
 	height: 50px;
 	width: auto;
@@ -182,7 +189,20 @@ body {
 }
 
 
-
+.round-image-50 {
+  margin: 5px;
+  padding: 0px;
+  background-color: white;
+  border: 1px solid #d9d9d9;
+  border-radius: 20px;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  height: 40px;
+  width: 40px;
+  overflow: hidden;
+  text-align: center;
+  img { width: 100% }
+}
 
 
 
