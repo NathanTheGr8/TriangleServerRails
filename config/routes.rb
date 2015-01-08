@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end
 
   #resources :users, only: [:show]
-  devise_for :users, controllers: { sessions: "users/sessions" }
+  devise_for :users
   
   #get '/users/:id', :to => 'users#show', :as => :user
 
