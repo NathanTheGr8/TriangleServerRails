@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sheet1">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String">ID</Data></Cell>
+        <Cell><Data ss:Type="String">Name</Data></Cell>
+        <Cell><Data ss:Type="String">Location</Data></Cell>
+        <Cell><Data ss:Type="String">Monday</Data></Cell>
+        <Cell><Data ss:Type="String">Tuesday</Data></Cell>
+        <Cell><Data ss:Type="String">Wednesday</Data></Cell>
+        <Cell><Data ss:Type="String">Thursday</Data></Cell>
+        <Cell><Data ss:Type="String">Friday</Data></Cell>
+        <Cell><Data ss:Type="String">Saturday</Data></Cell>
+        <Cell><Data ss:Type="String">Sunday</Data></Cell>
+      </Row>
+    <% @djs.each do |dj| %>
+      <Row>
+        <Cell><Data ss:Type="Number"><%= dj.id %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= dj.name %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= dj.location %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= dj.monday %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= dj.tuesday %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= dj.wednesday %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= dj.thursday %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= dj.friday %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= dj.saturday %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= dj.sunday %></Data></Cell>
+      </Row>
+    <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>

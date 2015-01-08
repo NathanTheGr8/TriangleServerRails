@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     collection { post :make }
   end
 
-  resources :users, only: [:show]
+  #resources :users, only: [:show]
   devise_for :users, controllers: { sessions: "users/sessions" }
   
   #get '/users/:id', :to => 'users#show', :as => :user

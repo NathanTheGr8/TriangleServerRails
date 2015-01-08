@@ -21,6 +21,7 @@ class DjsController < ApplicationController
     respond_to do |format|
       format.html
       format.csv { send_data @djs.to_csv }
+      format.xls
     end
   end
 

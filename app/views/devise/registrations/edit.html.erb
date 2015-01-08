@@ -27,6 +27,8 @@
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 
+  <%= image_tag(current_user.avatar.url(:md), class: "img-responsive") %>
+
   <div class="field">
     <%= f.label :avatar %> <br />
     <%= f.file_field :avatar %>
