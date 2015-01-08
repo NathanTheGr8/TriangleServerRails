@@ -31,10 +31,40 @@ $black: #1A1A1A;
 $off-white: #f6f9fa;
 $grey: #999999;
 
+@import "bootstrap-variables";
+
+.red {
+  color: $brand-danger;
+  &:hover {
+    color: darken($brand-danger, 13.5%);
+  }
+}
+
+.green {
+  color: $brand-success;
+  &:hover {
+    color: darkenen($brand-success, 13.5%);
+  }
+}
+
+.yellow {
+  color: $brand-warning;
+  &:hover {
+    color: darken($brand-warning, 13.5%);
+  }
+}
+
+.white {
+  color: #ffffff;
+}
 
 body {
 	padding: 60px 0px 0px 0px; 
 	margin: 0px;
+}
+
+footer {
+  margin: 15px 15px 0px 15px;
 }
 
 .center-div {

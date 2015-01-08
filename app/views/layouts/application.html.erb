@@ -37,6 +37,7 @@
           <% if user_signed_in? %>
             
             <li><%= link_to 'DJs', djs_path, :class => 'navbar-link' %></li>
+            <li><%= link_to 'Management', management_path, :class => 'navbar-link' %></li>
             <li><%= link_to image_tag(current_user.avatar.url(:thumb), class: "round-image-50"), edit_user_registration_path, :class => 'navbar-link', style: "margin: 0px; padding: 0px" %></li>
             <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
 

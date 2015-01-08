@@ -19,7 +19,6 @@
     <thead>
       <tr>
             <th>Name</th>
-            <th>ID</th>
             <th>Location</th>
             <th>Mon</th>
             <th>Tues</th>
@@ -36,7 +35,6 @@
       <%= @djs.find_each do |dj| %>
       <tr>
         <td><%= dj.name %></td>
-        <td><%= dj.id %></td>
         <td><%= dj.location %></td>
         <td><%= dj.monday %></td>
         <td><%= dj.tuesday %></td>
@@ -45,9 +43,18 @@
         <td><%= dj.friday %></td>
         <td><%= dj.saturday %></td>
         <td><%= dj.sunday %></td>
-        <td><%= link_to 'Show', dj %></td>
-        <td><%= link_to 'Edit', edit_dj_path(dj) %></td>
-        <td><%= link_to 'Destroy', dj, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to dj do%>
+          <span class="glyphicon glyphicon-info-sign blue"></span>
+        <% end %>
+        </td>
+        <td><%= link_to edit_dj_path(dj) do%>
+          <span class="glyphicon glyphicon-edit yellow"></span>
+        <% end %>
+        </td>
+        <td><%= link_to dj, method: :delete, data: { confirm: 'Are you sure?' } do%>
+          <span class="glyphicon glyphicon-remove red"></span>
+        <% end %>
+        </td>
       </tr>
       <% end %>
     </tbody>

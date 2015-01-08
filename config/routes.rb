@@ -10,6 +10,11 @@ Rails.application.routes.draw do
   devise_for :users
   
   #get '/users/:id', :to => 'users#show', :as => :user
+  #get "page/management" => "management"
+  #match '/management' => 'pages#management', :via => [:get]
+  #get 'pages/management' => 'pages#management'
+
+  get "/management", to: "management#index"
 
   root to: "welcome#index"
    
