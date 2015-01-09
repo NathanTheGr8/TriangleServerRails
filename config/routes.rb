@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :djs
+  resources :actives do
+    collection { post :import }
+    collection { post :makeinitials }
+  end
 
   resources :djs do
     collection { post :import }
