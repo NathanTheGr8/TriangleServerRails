@@ -14,6 +14,18 @@
   <h1>Listing Actives</h1>
 </div>
 
+<div class="row">
+  <div class="col-sm-4 text-center">
+    <h3>In House: <%= Active.countinhouse %></h3>
+  </div>
+  <div class="col-sm-4 text-center">
+    <h3>Out Of House: <%= Active.countouthouse %></h3>
+  </div>
+  <div class="col-sm-4 text-center">
+    <h3>Total: <%= Active.all.size %></h3>
+  </div>
+</div>
+
 <div class="table-responsive">
   <table class="table table-striped table-bordered table-hover">
     <thead>

@@ -31,4 +31,26 @@ class Active < ActiveRecord::Base
 			active.save!
 		end
 	end
+
+	def self.countinhouse
+		count = 0
+		@actives = Active.all
+		@actives.find_each do |active|
+			if active.inhouse?
+				count = count+1
+			end
+		end
+		return count
+	end
+
+	def self.countouthouse
+		count = 0
+		@actives = Active.all
+		@actives.find_each do |active|
+			if active.inhouse == false
+				count = count+1
+			end
+		end
+		return count
+	end
 end

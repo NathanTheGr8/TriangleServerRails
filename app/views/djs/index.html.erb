@@ -29,11 +29,13 @@
 </div>
 
 <div class="row">
-  <div class="col-sm-6">
-    <h3>Number of DJs: <%= Dj.count %></h3>
+  <div class="col-sm-6 text-center">
+    <h3>Number of DJs on Monday: <%= Dj.countMonday %></h3>
+    <h3>Number of DJs Rest: <%= Dj.count - Dj.countMonday %></h3>
   </div>
-  <div class="col-sm-6">
-    <h3>Number of Actives: <%= @actives.size %></h3>
+  <div class="col-sm-6 text-center">
+    <h3>Number of Actives Out of House: <%= Active.countouthouse %></h3>
+    <h3>Number of Actives In House: <%= Active.countinhouse %></h3>
   </div>
 </div>
 
