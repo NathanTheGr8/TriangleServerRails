@@ -20,8 +20,52 @@ class Dj < ActiveRecord::Base
 	    end
 	end
 
-	def self.countdjs()
-		return 
+	def self.count()
+		@djs = Dj.all
+		count = 0
+		@djs.each do |dj|
+			if dj.monday != nil
+				if dj.monday.length > 0
+					count = count+1
+				end
+			end
+			if dj.tuesday != nil
+          		if dj.tuesday.length > 0
+              		count = count+1
+              	end
+          	end
+
+          	if dj.wednesday != nil
+          		if dj.wednesday.length > 0
+              		count = count+1
+              	end
+          	end
+
+          	if dj.thursday != nil
+          		if dj.thursday.length > 0
+              		count = count+1
+              	end
+          	end
+
+          	if dj.friday != nil
+          		if dj.friday.length > 0
+              		count = count+1
+              	end
+          	end
+
+          	if dj.saturday != nil
+          		if dj.saturday.length > 0
+              		count = count+1
+              	end
+          	end
+
+          	if dj.sunday != nil
+          		if dj.sunday.length > 0
+              		count = count+1
+              	end
+          	end
+		end
+		return count
 	end
 
 
