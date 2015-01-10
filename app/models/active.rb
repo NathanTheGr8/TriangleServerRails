@@ -23,7 +23,9 @@ class Active < ActiveRecord::Base
 	def self.makeinitials()
 		@actives = Active.all
 		@actives.find_each do |active|
-			if active.middle.chr != "\""
+			if active.first == "Macaulay"
+				active.initials = "MAC"
+			elsif active.middle.chr != "\""
 				active.initials = active.first.chr+active.middle.chr+active.last.chr
 			else
 				active.initials = active.first.chr+active.middle[1]+active.last.chr
