@@ -25,8 +25,8 @@
 
 
 $base-color: #990000;
-$light-color: lighten($base-color, 10%);
-$dark-color: darken($base-color, 10%);
+$light-base: lighten($base-color, 10%);
+$dark-base: darken($base-color, 10%);
 $black: #1A1A1A;
 $off-white: #f6f9fa;
 $grey: #999999;
@@ -74,16 +74,40 @@ footer {
   width: 100%;
 }
 
-.nav-img {
-	height: 50px;
-	width: auto;
-	padding: 5px;
+
+
+/*Navbar*/
+
+.navbar {
+  .nav-img {
+    height: 50px;
+    width: auto;
+    padding: 5px;
+  }
+
+  .navbar-brand {
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav {
+    .active{
+      background-color: $gray-lighter; 
+      &:hover{
+        background-color: #ffffff;
+      }
+    }
+
+    .navbar-link{
+
+      &:hover {
+        background-color: #ffffff;
+      }
+    }
+  }
 }
 
-.navbar-brand {
-	margin: 0;
-	padding: 0;
-}
+/*end nav*/
 
 /*carousel*/
 
@@ -214,7 +238,7 @@ footer {
 .fa-color {
   color: $base-color;
   &:hover {
-    color: $dark-color;
+    color: $dark-base;
   }
 }
 
