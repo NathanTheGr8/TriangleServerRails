@@ -32,10 +32,10 @@
 
 <div class="row">
   <div class="col-sm-6 text-center">
-    <h3>Not Assigned Actives Monday: <span class="<%= 'green' if (Active.countouthouse-Dj.countMonday)==0 %><%= 'red' if (Active.countouthouse-Dj.countMonday)>0 %><%= 'green' if (Active.countouthouse-Dj.countMonday)<0 %>"><%= Active.countouthouse-Dj.countMonday %></span></h3>
+    <h3>Not Assigned Actives Monday: <span class="<%= 'green' if (Active.countouthouse-Dj.countMonday)==0 %><%= 'red' if (Active.countouthouse-Dj.countMonday)>0 %><%= 'red' if (Active.countouthouse-Dj.countMonday)<0 %>"><%= Active.countouthouse-Dj.countMonday %></span></h3>
   </div>
   <div class="col-sm-6 text-center">
-    <h3>Not Assigned Actives Rest: <span class="<%= 'green' if (Active.countinhouse-(Dj.count-Dj.countMonday))==0 %><%= 'green' if (Active.countinhouse-(Dj.count-Dj.countMonday))>0 %><%= 'green' if (Active.countinhouse-(Dj.count-Dj.countMonday))<0 %>"><%= Active.countinhouse-(Dj.count-Dj.countMonday) %></span></h3>
+    <h3>Not Assigned Actives Rest: <span class="<%= 'green' if (Active.countinhouse-(Dj.count-Dj.countMonday))==0 %><%= 'red' if (Active.countinhouse-(Dj.count-Dj.countMonday))>0 %><%= 'red' if (Active.countinhouse-(Dj.count-Dj.countMonday))<0 %>"><%= Active.countinhouse-(Dj.count-Dj.countMonday) %></span></h3>
   </div>
 </div>
 
