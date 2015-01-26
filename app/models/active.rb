@@ -25,6 +25,8 @@ class Active < ActiveRecord::Base
 		@actives.find_each do |active|
 			if active.first == "Macaulay"
 				active.initials = "MAC"
+			elsif active.pledgeclass == "pledge"
+				active.initials = active.first
 			elsif active.middle.chr != "\""
 				active.initials = active.first.chr+active.middle.chr+active.last.chr
 			else
