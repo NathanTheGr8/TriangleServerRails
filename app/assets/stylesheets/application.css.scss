@@ -265,6 +265,29 @@ footer {
 	width: auto;
 }
 
-.cell {
-  width: 50px;
+
+/* Tables */
+table {
+  .table-hover {
+    &:hover, :focus {
+      //background-color: hsl(0,50,70);
+    }
+  }
+  tr {
+    &:hover, :focus {
+      //background-color: hsl(0,50,70);
+    }
+    //padding: 0;
+    //margin: 0;
+    .btn {
+      height: 24px;
+      margin: 0;
+      padding: 1px 5px;
+    }
+    .cell {
+      width: 40px;
+    }
+  }
 }
+
+/* end Tables */
