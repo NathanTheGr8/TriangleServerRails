@@ -1,0 +1,12 @@
+
+
+<%= form_for(dj, :html => { :role => "form" }) do |dj| %>
+  <td><%= dj.text_field :monday, :class => "cell" %></td>
+  <td><%= dj.text_field :tuesday, :class => "cell" %></td>
+  <td><%= dj.text_field :wednesday, :class => "cell" %></td>
+  <td><%= dj.text_field :thursday, :class => "cell" %></td>
+  <td><%= dj.text_field :friday, :class => "cell" %></td>
+  <td><%= dj.text_field :saturday, :class => "cell" %></td>
+  <td><%= dj.text_field :sunday, :class => "cell" %></td>
+  <td><%= dj.submit 'update', :class => "btn btn-primary" %></td>
+<% end %>

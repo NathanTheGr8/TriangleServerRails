@@ -65,13 +65,7 @@
       <tr>
         <td><%= dj.name %></td>
         <td><%= dj.location %></td>
-        <td><%= dj.monday %></td>
-        <td><%= dj.tuesday %></td>
-        <td><%= dj.wednesday %></td>
-        <td><%= dj.thursday %></td>
-        <td><%= dj.friday %></td>
-        <td><%= dj.saturday %></td>
-        <td><%= dj.sunday %></td>
+        <%= render 'row', :dj => dj %>
         <td><%= link_to dj do%>
           <span class="glyphicon glyphicon-info-sign blue"></span>
         <% end %>

@@ -49,8 +49,18 @@ class DjsController < ApplicationController
   end
 
   def update
-    @dj.update(dj_params)
-    respond_with(@dj)
+    respond_to do |format|
+      if @dj.update(dj_params)
+        format.html { redirect_to djs_path, notice: 'DJ was successfully updated.' }
+        format.json { render :show, status: :ok, location: @dj }
+      else
+        format.html { render :edit }
+        format.json { render json: @dj.errors, status: :unprocessable_entity }
+      end
+    end
+
+    #@dj.update(dj_params)
+    #respond_with(@dj)
   end
 
   def destroy
