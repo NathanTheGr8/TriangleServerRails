@@ -13,6 +13,10 @@
     <span class="glyphicon glyphicon-random"></span>
     Make DJs
   <% end %>
+  <%= link_to remove_all_djs_path, :method => :get, :class => 'btn btn-danger', data: {confirm: "Are you sure?"} do  %>
+    <span class="glyphicon glyphicon-remove"></span>
+    Delete All
+  <% end %>
 
 
 

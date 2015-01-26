@@ -3,6 +3,12 @@ class ActivesController < ApplicationController
 
   respond_to :html
 
+  def remove_all
+    Active.delete_all
+    flash[:notice] = "You have removed all Actives!"
+    redirect_to actives_path
+  end
+
   def makeinitials
     Active.makeinitials()
     redirect_to actives_path, notice: "Initials Made"

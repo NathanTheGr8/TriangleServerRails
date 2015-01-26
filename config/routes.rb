@@ -1,12 +1,18 @@
 Rails.application.routes.draw do
   resources :actives do
-    collection { post :import }
-    collection { post :makeinitials }
+    collection do
+      post :import
+      post :makeinitials
+      get 'remove_all'
+    end
   end
 
   resources :djs do
-    collection { post :import }
-    collection { post :make }
+    collection do
+      post :import
+      post :make 
+      get 'remove_all'
+    end
   end
 
   #resources :users, only: [:show]

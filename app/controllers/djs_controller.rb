@@ -2,13 +2,17 @@ class DjsController < ApplicationController
   before_action :set_dj, only: [:show, :edit, :update, :destroy]
 
   respond_to :html
-  #intials = ["KAJ", "AMW”, “JMB", "AWW", "DCG", "JPM", "MDH", "MDP", "BBZ", "CPU", "GWP", "JSS", "IJL", "KAM", "LLL", "DPM", "TLC", "JRS", "AMN", "GMV", "MJV", "NHD", "NGP", "DML", "ELL", "NRD", "MNB", "KIL", "MGN", "APP", "HHH", "SMB", "GPS", "ABB", "MSH", "HTJ", "HCS", "APE", "DUH", "JMR", "DMF", "CJV", "KJS", "ADS", "MCS", "RSZ", "JFK", "WDM", "SEH", "TRV", "A$S", "MJE", "CES", "MCS", "AVP", "HLM", "JBW"]
-
-  #“KAJ”, “AMW”, “JMB”, “AWW”, “DCG”, “JPM”, “MDH”, “MDP”, “BBZ”, “CPU”, “GWP”, “JSS”, “IJL”, “KAM”, “LLL”, “DPM”, “TLC”, “JRS”, “AMN”, “GMV”, “MJV”, “NHD”, “NGP”, “DML”, “ELL”, “NRD”, “MNB”, “KIL”, “MGN”, “APP”, “HHH”, “SMB”, “GPS”, “ABB”, “MSH”, “HTJ”, “HCS”, “APE”, “DUH”, “JMR”, “DMF”, “CJV”, “KJS”, “ADS”, “MCS”, “RSZ”, “JFK”, “WDM”, “SEH”, “TRV”, “A$S”, “MJE”, “CES”, “MCS”, “AVP”, “HLM”, “JBW”
+  
   def make
     #@bros = User.all
     Dj.make()
     redirect_to djs_path, notice: "DJs made for Week"
+  end
+
+  def remove_all
+    Dj.delete_all
+    flash[:notice] = "You have removed all DJs!"
+    redirect_to djs_path
   end
 
   def import
