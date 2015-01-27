@@ -7,7 +7,11 @@
   <% end %>
   <%= link_to djs_path(:format => :csv), :class => 'btn btn-primary' do %>
     <span class="glyphicon glyphicon-download"></span>
-    Download
+    CSV
+  <% end %>
+  <%= link_to djs_path(:format => :xls), :class => 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-download"></span>
+    XLS
   <% end %>
   <%= link_to make_djs_path, method: :post, :class => 'btn btn-primary' do %>
     <span class="glyphicon glyphicon-random"></span>
@@ -66,10 +70,6 @@
         <td><%= dj.name %></td>
         <td><%= dj.location %></td>
         <%= render 'row', :dj => dj %>
-        <td><%= link_to dj do%>
-          <span class="glyphicon glyphicon-info-sign blue"></span>
-        <% end %>
-        </td>
         <td><%= link_to edit_dj_path(dj) do%>
           <span class="glyphicon glyphicon-edit yellow"></span>
         <% end %>

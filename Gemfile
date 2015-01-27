@@ -22,7 +22,7 @@ gem "pundit"
 
 
 #spread sheet parsing
-gem 'roo'
+require 'spreadsheet'
 
 
 

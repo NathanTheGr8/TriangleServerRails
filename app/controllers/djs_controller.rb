@@ -26,7 +26,10 @@ class DjsController < ApplicationController
     respond_to do |format|
       format.html
       format.csv { send_data @djs.to_csv }
-      format.xls
+        #response.headers['Content-Type'] = 'text/csv'
+        #response.headers['Content-Disposition'] = 'attachment; filename=djs.csv'    
+        #render :template => "djs/index.csv.erb"
+      format.xls { send_data @djs.to_xls }
     end
   end
 

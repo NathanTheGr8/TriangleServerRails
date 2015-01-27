@@ -1,5 +1,6 @@
 require 'csv'
-#require 'roo'
+require 'spreadsheet'
+require 'open-uri'
 
 class Dj < ActiveRecord::Base
 	def self.import(file)
@@ -12,12 +13,47 @@ class Dj < ActiveRecord::Base
 	end
 
 	def self.to_csv(options = {})
-	    CSV.generate(options) do |csv|
+		CSV.generate(options) do |csv|
 	        csv << column_names
 	        all.each do |dj|
 	        	csv << dj.attributes.values_at(*column_names)
 	      	end
 	    end
+	    #headers = ['Name', 'Location']
+		#CSV.generate_line headers
+        #all.each do |dj|
+        #	CSV.generate_line([dj.name, dj.location])
+      	#end
+	end
+
+	def self.to_xls
+		#old roo code
+		# loads an Excel Spreadsheet for Excel .xlsx files
+		#s = Roo::Excelx.new("Djs.xlsx")
+		# first sheet in the spreadsheet file will be used
+		#s.default_sheet = s.sheets.first
+
+		book = Spreadsheet::Workbook.new
+
+		sheet1 = book.create_worksheet
+		sheet1.name = 'DJs for the Week'
+
+		#makes names
+		sheet1.row(2).concat %w{Name Location Jokes}
+
+		#interates starting at third row
+		sheet1.each 1 do |row|
+			all.each do |dj|
+				row.push [ dj.name, dj.location,
+                        'butts' ]
+			end
+		end
+
+		#write excell file
+		#spreadsheet = StringIO.new 
+		#book.write spreadsheet 
+		#send_data spreadsheet.string, :filename => "DJs.xls", :type =>  "application/vnd.ms-excel"
+		book.write 'public/djs.xls'
 	end
 
 	def self.countMonday()
