@@ -1,5 +1,4 @@
 require 'csv'
-require 'spreadsheet'
 require 'open-uri'
 
 class Dj < ActiveRecord::Base
@@ -26,7 +25,7 @@ class Dj < ActiveRecord::Base
       	#end
 	end
 
-	def self.to_xls
+	def self.to_xls(options = {})
 		#old roo code
 		# loads an Excel Spreadsheet for Excel .xlsx files
 		#s = Roo::Excelx.new("Djs.xlsx")
@@ -41,13 +40,19 @@ class Dj < ActiveRecord::Base
 		#makes names
 		sheet1.row(2).concat %w{Name Location Jokes}
 
+
+		#numRows = @djs.size
+
+
 		#interates starting at third row
-		sheet1.each 1 do |row|
-			all.each do |dj|
-				row.push [ dj.name, dj.location,
-                        'butts' ]
-			end
-		end
+		#sheet1.each 1 do |row|
+		#count = 0
+		#all.each do |dj|
+		#	row = count
+		#	sheet1.row(row+3).push ['butts' ]
+		#	count = count + 1
+		#end
+		
 
 		#write excell file
 		#spreadsheet = StringIO.new 

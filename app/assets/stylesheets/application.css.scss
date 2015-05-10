@@ -24,9 +24,9 @@
 
 
 
-$base-color: #990000;
-$light-base: lighten($base-color, 10%);
-$dark-base: darken($base-color, 10%);
+$brand: #990000;
+$light-base: lighten($brand, 10%);
+$dark-base: darken($brand, 10%);
 $black: #1A1A1A;
 $off-white: #f6f9fa;
 $grey: #999999;
@@ -58,6 +58,14 @@ $grey: #999999;
   color: #ffffff;
 }
 
+::-moz-selection { /* Code for Firefox */
+    background: darken($brand,10);
+}
+
+::selection {
+    background: darken($brand,10);
+}
+
 body {
 	padding: 60px 0px 0px 0px; 
 	margin: 0px;
@@ -76,44 +84,124 @@ footer {
 
 
 
-/*Navbar*/
+/* Custom Nav */
+$link-color: #ffffff;
 
-.navbar {
-  .nav-img {
-    height: 50px;
-    width: auto;
-    padding: 5px;
-  }
-
-  .navbar-brand {
-    margin: 0;
-    padding: 0;
-  }
-
-  .nav {
-    .active{
-      background-color: $gray-lighter; 
-      &:hover{
-        background-color: #ffffff;
-      }
-    }
-
-    .navbar-link{
-
-      &:hover {
-        background-color: #ffffff;
-      }
-    }
-  }
+.container-fluid {
+  margin: 0px;
+  padding: 0px;
 }
 
-/*end nav*/
+.navbar-custom{
+  transition-duration: 1s;
+  border-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(240, 240, 240, 0.30);
+  height: 50px;
+  .navbar-header {
+    .navbar-toggle {
+      color: #ffffff;
+        border-color: darken($brand,15);
+        background-color: $brand;
+        .icon-bar {
+          background-color: darken($brand,15);
+        }
+        &:hover, &:focus {
+          background-color: darken($brand,30);
+        }
+    }
+    .navbar-brand {
+      margin: 0;
+      padding: 0;
+      color: #ffffff;
+      &:hover, &:focus, &:active, &.active{
+        color: darken(#ffffff,20);
+      }
+      .logo {
+        margin: -5px 0 0 0;
+        padding: 0px;
+        height: 60px;
+        width: auto;
+        &:hover, &:focus, &:active, &.active {
+          //background-color: lighten($brand, 30);
+        }
+      }
+      //span {
+      //  &:hover, &:focus, &:active, &.active{
+      //    color: darken($brand,20);
+      //  }
+      //}
+
+    }
+  }
+    .navbar-collapse {
+      .navbar-nav {
+        li {
+          color: #ffffff;
+          a {
+            color: $link-color;
+            font-weight: 900;
+            &:hover, &:focus, &:active, &.active {
+              background-color: darken($brand, 10);
+            }
+          }
+          .active {
+            background-color: lighten($brand, 5);
+          }
+        }
+      }
+          
+    } 
+      
+}
+
+@media (min-width: 768px) {
+  .navbar-custom{
+    border-color: transparent;
+    background-color: rgba(34,34,34,0.2);
+    //background-color: transparent;
+    .navbar-header {
+
+      .navbar-brand {
+        color: #ffffff;
+        &:hover, &:focus, &:active, &.active{
+
+        }
+      }
+    }
+      .navbar-collapse {
+        .navbar-nav {
+          li {
+            color: #ffffff;
+            a {
+              color: $link-color;
+              &:hover, &:focus, &:active, &.active {
+                background-color: darken($brand, 10);
+              }
+            }
+            .active {
+              background-color: lighten($brand, 5);
+            }
+          }
+        }
+            
+      } 
+      &.navbar-shrink {
+          padding: 10px 0;
+          background-color: #cccccc;
+          .navbar-brand {
+            font-size: 1.5em;
+          }
+      }
+  }
+}
+/* end nav */
 
 /*carousel*/
 
 
 .slide1, .slide2, .slide3, .slide4, .slide5, .slide6, .slide7 {
-  height: calc(100vh - 60px);
+  height: calc(100vh - 50px);
+
   background-size: cover;
   background-position: center center;
 }
@@ -202,13 +290,13 @@ footer {
 }
 
 .carousel-overlay {
-  background-color: rgba(255, 255, 255, 0.6);
+  //background-color: rgba(255, 255, 255, 0.6);
   position: absolute;
   bottom: 0%;
   right: 0;
   left: 0;
   h1 {
-    color: $base-color;
+    color: $brand;
     font-size: 40px;
   }
   h3 {
@@ -219,13 +307,13 @@ footer {
 
 @media (min-width: 768px) {
   .carousel-overlay {
-    background-color: rgba(255, 255, 255, 0.6);
+    //background-color: rgba(255, 255, 255, 0.6);
     position: absolute;
     bottom: 12%;
     right: 0;
     left: 0;
     h1 {
-      color: $base-color;
+      color: $brand;
       font-size: 70px;
     }
     h3 {
@@ -236,7 +324,7 @@ footer {
 }
 
 .fa-color {
-  color: $base-color;
+  color: $brand;
   &:hover {
     color: $dark-base;
   }
