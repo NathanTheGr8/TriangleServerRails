@@ -25,6 +25,8 @@ Rails.application.routes.draw do
 
   get "/management", to: "management#index"
 
+  get "/kevincounter", to: "kevincounter#index"
+
   get "/test", to: "test#index"
   root to: "welcome#index"
    

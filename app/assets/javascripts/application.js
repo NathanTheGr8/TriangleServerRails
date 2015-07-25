@@ -28,8 +28,10 @@ $(document).ready(function(){
       scroll_start = $(this).scrollTop();
       if(scroll_start > offset.top) {
           $('.navbar-custom').css('background-color', 'rgba(34,34,34,0.9)');
+          //$('.navbar-custom.li').css('color', '#ffffff');
        } else {
-          $('.navbar-custom').css('background-color', 'rgba(34,34,34,0.2)');
+          $('.navbar-custom').css('background-color', 'rgba(34,34,34,0.3)');
+          //$('.navbar-custom.li').css('color', '#111111');
        }
    });
 

@@ -13,12 +13,11 @@
     <%= javascript_include_tag "https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js", "https://oss.maxcdn.com/respond/1.4.2/respond.min.js" %>
   <![endif]-->
 
-  <%= favicon_link_tag 'favicon.ico' %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body style="margin: 0px; padding-top: 50px">
 
   <!--nav-->
   <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
@@ -40,10 +39,17 @@
             
             <li class="<%= 'active' if @page_tab == "djs" %>"><%= link_to 'DJs', djs_path, :class => 'navbar-link' %></li>
             <li class="<%= 'active' if @page_tab == "actives" %>"><%= link_to 'Actives', actives_path, :class => 'navbar-link' %></li>
-            <li class="<%= 'active' if @page_tab == "management" %>"><%= link_to 'Management', test_path, :class => 'navbar-link' %></li>
             <li class="<%= 'active' if @page_tab == "djs" %>">
-            <%= link_to 'Kevin Counter', kevincounter_path, :class => 'navbar-link' %>
-            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><%= link_to 'Management', test_path, :class => 'navbar-link' %></li>
+                  <li><%= link_to 'Kevin Counter', kevincounter_path, :class => 'navbar-link' %></li>
+                  <li class="divider"></li>
+                  <li class="dropdown-header">Nav header</li>
+                  <li><a href="#">Separated link</a></li>
+                  <li><a href="#">One more separated link</a></li>
+                </ul>
             <li class="<%= 'active' if @page_tab == "profile" %>"><%= link_to image_tag(current_user.avatar.url(:thumb), class: "round-image-50"), edit_user_registration_path, :class => 'navbar-link', style: "margin: 0px; padding: 0px" %></li>
             <li class="<%= 'active' if @page_tab == "" %>"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
 
@@ -57,8 +63,6 @@
   </nav>
   <!--end nav-->
 
-
-
   <div class="container-fluid">
     <% flash.each do |name, msg| %>
       <%= content_tag :div, :class => "alert alert-#{ name == :error ? "danger" : "success" } alert-dismissable", :role => "alert" do %>
@@ -70,10 +74,27 @@
     <%= yield %>
   </div>
 
-  <!-- FOOTER -->
-  <footer>
-    <p class="pull-right"><a href="#">Back to top</a></p>
-    <p>&copy; 2014 Nasty Nate
-  </footer>
+
+
+<!-- kevin counter-->
+  <div class="kevin">
+    <!--counter-->
+        <div class="container text-center">
+            <h1>It's Been <span id="days" style="color: red">0</span> Days</h1>
+            <h1>Since Homeless Slept In His Bed</h1>
+            <button class="btn btn-danger reset-button" onclick="changeDate()">reset</button>
+        </div>
+
+  </div>
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+

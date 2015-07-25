@@ -64,23 +64,24 @@
       </tr>
     </thead>
 
-    <tbody>
-      <%= @djs.find_each do |dj| %>
-      <tr>
-        <td><%= dj.name %></td>
-        <td><%= dj.location %></td>
-        <%= render 'row', :dj => dj %>
-        <td><%= link_to edit_dj_path(dj) do%>
-          <span class="glyphicon glyphicon-edit yellow"></span>
+      <tbody>
+        <%= @djs.find_each do |dj| %>
+        <tr>
+          <td><%= truncate(dj.name, :length => 60, :separator => ' ') %></td>
+          <td><%= dj.location %></td>
+          <%= render 'row', :dj => dj %>
+          <td><%= link_to edit_dj_path(dj) do%>
+            <span class="glyphicon glyphicon-edit yellow"></span>
+          <% end %>
+          </td>
+          <td><%= link_to dj, method: :delete, data: { confirm: 'Are you sure?' } do%>
+            <span class="glyphicon glyphicon-remove red"></span>
+          <% end %>
+          </td>
+        </tr>
         <% end %>
-        </td>
-        <td><%= link_to dj, method: :delete, data: { confirm: 'Are you sure?' } do%>
-          <span class="glyphicon glyphicon-remove red"></span>
-        <% end %>
-        </td>
-      </tr>
-      <% end %>
-    </tbody>
+      </tbody>
+    
   </table>
 </div>
 

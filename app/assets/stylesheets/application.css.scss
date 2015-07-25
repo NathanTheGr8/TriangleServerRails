@@ -33,6 +33,10 @@ $grey: #999999;
 
 @import "bootstrap-variables";
 
+html {
+  margin: 0;
+  padding: 0;
+}
 .red {
   color: $brand-danger;
   &:hover {
@@ -55,7 +59,7 @@ $grey: #999999;
 }
 
 .white {
-  color: #ffffff;
+  color: #eeeeee;
 }
 
 ::-moz-selection { /* Code for Firefox */
@@ -94,8 +98,8 @@ $link-color: #ffffff;
 
 .navbar-custom{
   transition-duration: 1s;
-  border-color: rgba(255, 255, 255, 0.5);
-  background-color: rgba(240, 240, 240, 0.30);
+  border-color: #222222;
+  background-color: rgba(34,34,34,0.3);
   height: 50px;
   .navbar-header {
     .navbar-toggle {
@@ -137,6 +141,7 @@ $link-color: #ffffff;
       .navbar-nav {
         li {
           color: #ffffff;
+          background-color: rgba(10, 10, 10, 0.50);
           a {
             color: $link-color;
             font-weight: 900;
@@ -147,6 +152,10 @@ $link-color: #ffffff;
           .active {
             background-color: lighten($brand, 5);
           }
+          .dropdown-menu {
+            background-color: rgba(10, 10, 10, 0.60);
+            //background-color: rgba(34,34,34,0.2);
+          }
         }
       }
           
@@ -156,8 +165,7 @@ $link-color: #ffffff;
 
 @media (min-width: 768px) {
   .navbar-custom{
-    border-color: transparent;
-    background-color: rgba(34,34,34,0.2);
+    border-color: #222222;
     //background-color: transparent;
     .navbar-header {
 
@@ -172,6 +180,7 @@ $link-color: #ffffff;
         .navbar-nav {
           li {
             color: #ffffff;
+            background-color: transparent;
             a {
               color: $link-color;
               &:hover, &:focus, &:active, &.active {
@@ -379,3 +388,16 @@ table {
 }
 
 /* end Tables */
+
+
+/* Kevin Counter */
+.kevin {
+  height: calc(100vh - 50px);
+  background-size: cover;
+  background-position: center center;
+  background-image: image-url("KevinCounter.jpg");
+  h1 {
+    color: white;
+  }
+}
+/* end Kevin Counter */
